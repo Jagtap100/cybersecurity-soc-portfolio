@@ -96,3 +96,11 @@ will be added to demonstrate the practical work performed.
 - Used SPL queries for log investigation
 - Identified suspicious activity and security events
 - Practiced SOC monitoring and incident investigation
+## Project Objectives
+
+- Monitor and analyze security logs using Splunk
+- Investigate Windows and Sysmon events
+- Create SPL queries for security investigations
+- Identify suspicious activities and potential threats
+- Practice SOC alert investigation and log analysis
+- Understand the basic workflow of a Security Operations Center (SOC)
