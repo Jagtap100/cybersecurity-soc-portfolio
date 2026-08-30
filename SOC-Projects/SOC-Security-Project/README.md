@@ -78,3 +78,14 @@ will be added to demonstrate the practical work performed.
 
 ### Splunk Log Analysis
 ![Splunk Log Analysis](./screenshots/Splunk-log-analysis.png)
+## Skills & Tools
+
+- SIEM: Splunk
+- Log Analysis
+- Security Monitoring
+- Windows Event Logs
+- Sysmon
+- SPL (Search Processing Language)
+- Incident Detection
+- Threat Detection
+- Basic SOC Operations
