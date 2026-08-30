@@ -135,3 +135,11 @@ will be added to demonstrate the practical work performed.
 - Developed hands-on skills with Splunk and SPL
 - Practiced identifying and investigating suspicious activities
 - Learned basic security event correlation and incident investigation
+## Project Structure
+
+SOC-Security-Project/
+│
+├── screenshots/
+│   └── Splunk-log-analysis.png
+│
+└── README.md
