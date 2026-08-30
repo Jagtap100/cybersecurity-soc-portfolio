@@ -104,3 +104,11 @@ will be added to demonstrate the practical work performed.
 - Identify suspicious activities and potential threats
 - Practice SOC alert investigation and log analysis
 - Understand the basic workflow of a Security Operations Center (SOC)
+## How It Works
+
+1. Collect Windows and Sysmon security logs
+2. Ingest logs into Splunk
+3. Search and filter events using SPL
+4. Analyze suspicious activities and event patterns
+5. Investigate relevant security events
+6. Document findings for SOC analysis
