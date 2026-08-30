@@ -89,3 +89,10 @@ will be added to demonstrate the practical work performed.
 - Incident Detection
 - Threat Detection
 - Basic SOC Operations
+## Key Learning
+
+- Analyzed security logs using Splunk
+- Investigated Windows and Sysmon events
+- Used SPL queries for log investigation
+- Identified suspicious activity and security events
+- Practiced SOC monitoring and incident investigation
