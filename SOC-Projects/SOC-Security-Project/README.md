@@ -74,3 +74,7 @@ security monitoring, log analysis and threat investigation.
 
 Screenshots, investigation notes and relevant findings
 will be added to demonstrate the practical work performed.
+## Screenshots
+
+### Splunk Log Analysis
+![Splunk Log Analysis](./screenshots/Splunk-log-analysis.png)
