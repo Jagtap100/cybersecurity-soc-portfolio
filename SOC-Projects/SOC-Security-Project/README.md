@@ -112,3 +112,19 @@ will be added to demonstrate the practical work performed.
 4. Analyze suspicious activities and event patterns
 5. Investigate relevant security events
 6. Document findings for SOC analysis
+## Detection & Investigation
+
+### Windows Process Monitoring
+- Analyzed Windows process creation events using Sysmon Event ID 1
+- Used SPL queries to filter and investigate suspicious processes
+- Reviewed process names, command lines, users, and parent-child relationships
+
+### Logon Investigation
+- Analyzed Windows authentication and logon events
+- Investigated user activity using Logon ID
+- Correlated events to understand suspicious login activity
+
+### Splunk Investigation
+- Searched and filtered security events in Splunk
+- Used SPL commands such as stats, eventstats, table, and search
+- Reviewed event distribution by source type
