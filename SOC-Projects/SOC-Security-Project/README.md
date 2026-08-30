@@ -128,3 +128,10 @@ will be added to demonstrate the practical work performed.
 - Searched and filtered security events in Splunk
 - Used SPL commands such as stats, eventstats, table, and search
 - Reviewed event distribution by source type
+## Project Outcome
+
+- Gained practical experience in SOC monitoring and log analysis
+- Improved understanding of Windows and Sysmon security events
+- Developed hands-on skills with Splunk and SPL
+- Practiced identifying and investigating suspicious activities
+- Learned basic security event correlation and incident investigation
