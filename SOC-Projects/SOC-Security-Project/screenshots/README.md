@@ -5,4 +5,4 @@
 I analysed Splunk internal logs and reviewed event
 distribution by sourcetype.
 
-![Splunk Log Analysis](screenshots/splunk-log-analysis.png)
+![Splunk Log Analysis](./Splunk-log-analysis.png)
