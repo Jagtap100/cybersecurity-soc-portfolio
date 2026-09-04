@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Colour Me | SOC Security Dashboard</title>
+  <title>Cybersecurity Portfolio | SOC Analyst</title>
 
   <style>
     * {
@@ -21,422 +21,330 @@
     body {
       background: #080f1d;
       color: #e2e8f0;
-      min-height: 100vh;
+      line-height: 1.6;
     }
 
-    /* HEADER */
+    /* ================= HEADER ================= */
 
-    .header {
+    header {
       background: #0b1324;
       border-bottom: 1px solid #1e3a5f;
-      padding: 24px 20px;
+      padding: 50px 20px;
+      text-align: center;
     }
 
-    .header-content {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .brand h1 {
+    header h1 {
       color: #38bdf8;
-      font-size: 26px;
-      margin-bottom: 6px;
+      font-size: 36px;
+      margin-bottom: 8px;
     }
 
-    .brand p {
+    header h2 {
+      color: #e2e8f0;
+      font-size: 21px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    header p {
       color: #94a3b8;
-      font-size: 14px;
+      max-width: 700px;
+      margin: auto;
     }
 
-    .live-status {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #22c55e;
-      font-weight: bold;
-      font-size: 14px;
-    }
+    /* ================= NAVIGATION ================= */
 
-    .live-dot {
-      width: 10px;
-      height: 10px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #22c55e;
-    }
-
-    /* NAVBAR */
-
-    .navbar {
+    nav {
       background: #0b1324;
       border-bottom: 1px solid #1e293b;
-      padding: 12px 20px;
+      padding: 13px;
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
-    .nav-content {
-      max-width: 1200px;
+    .nav-container {
+      max-width: 1100px;
       margin: auto;
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
-    .navbar a {
+    nav a {
       color: #cbd5e1;
       text-decoration: none;
-      padding: 9px 18px;
+      padding: 8px 15px;
       border-radius: 6px;
       font-size: 14px;
       font-weight: bold;
     }
 
-    .navbar a:hover {
+    nav a:hover {
       background: #172554;
       color: #38bdf8;
     }
 
-    /* MAIN */
+    /* ================= MAIN ================= */
 
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
       padding: 30px 20px;
     }
 
-    /* TOP CARDS */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-bottom: 25px;
-    }
-
-    .card {
+    section {
       background: #0f1b2d;
       border: 1px solid #1e3a5f;
       border-radius: 10px;
-      padding: 22px;
+      padding: 28px;
+      margin-bottom: 25px;
+      scroll-margin-top: 70px;
     }
 
-    .card-title {
-      color: #94a3b8;
-      font-size: 13px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
+    .section-title {
+      color: #38bdf8;
+      font-size: 22px;
+      margin-bottom: 20px;
     }
 
-    .card-value {
-      font-size: 28px;
-      font-weight: bold;
+    /* ================= ABOUT ================= */
+
+    .about-text {
+      color: #cbd5e1;
+      font-size: 15px;
     }
 
-    .blue {
+    /* ================= SKILLS ================= */
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .skill {
+      background: #0a1424;
+      border: 1px solid #263b55;
+      padding: 13px;
+      text-align: center;
+      border-radius: 7px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .skill:hover {
+      border-color: #38bdf8;
       color: #38bdf8;
     }
 
-    .green {
-      color: #22c55e;
+    /* ================= PROJECT ================= */
+
+    .project {
+      background: #0a1424;
+      border: 1px solid #263b55;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
     }
 
-    .yellow {
-      color: #facc15;
+    .project h3 {
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .tech {
+      color: #22c55e;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .project-links {
+      margin-top: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #0369a1;
+      color: white;
+      text-decoration: none;
+      padding: 9px 15px;
+      border-radius: 6px;
+      margin-right: 8px;
+      font-size: 13px;
+    }
+
+    .button:hover {
+      background: #0284c7;
+    }
+
+    /* ================= EXPERIENCE ================= */
+
+    .experience {
+      border-left: 3px solid #38bdf8;
+      padding-left: 18px;
+      margin-bottom: 20px;
+    }
+
+    .experience h3 {
+      color: #e2e8f0;
+    }
+
+    .experience .date {
+      color: #38bdf8;
+      font-size: 13px;
+      margin: 4px 0;
+    }
+
+    .experience p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* ================= CERTIFICATIONS ================= */
+
+    .certifications {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cert {
+      background: #0a1424;
+      padding: 15px;
+      border-radius: 7px;
+      border-left: 4px solid #22c55e;
+    }
+
+    .cert strong {
+      color: #e2e8f0;
+    }
+    .cert span {
+      display: block;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    /* ================= SOC DASHBOARD ================= */
+
+    .dashboard-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .dashboard-card {
+      background: #0a1424;
+      padding: 18px;
+      border-radius: 7px;
+      border: 1px solid #263b55;
+      text-align: center;
+    }
+
+    .dashboard-card small {
+      display: block;
+      color: #94a3b8;
+      margin-bottom: 7px;
+    }
+
+    .dashboard-card strong {
+      font-size: 25px;
     }
 
     .red {
       color: #ef4444;
     }
 
-    /* THREAT LEVEL */
-
-    .threat-panel {
-      background: #0f1b2d;
-      border: 1px solid #1e3a5f;
-      border-radius: 10px;
-      padding: 22px;
-      margin-bottom: 25px;
-    }
-
-    .section-title {
-      color: #38bdf8;
-      font-size: 19px;
-      margin-bottom: 18px;
-    }
-
-    .threat-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .threat-level {
+    .yellow {
       color: #facc15;
-      font-weight: bold;
     }
 
-    .progress {
-      width: 100%;
-      height: 10px;
-      background: #1e293b;
-      border-radius: 10px;
-      overflow: hidden;
+    .green {
+      color: #22c55e;
     }
 
-    .progress-bar {
-      width: 58%;
-      height: 100%;
-      background: #facc15;
+    .blue {
+      color: #38bdf8;
     }
 
-    /* TWO COLUMN */
+    /* ================= ALERTS ================= */
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-      margin-bottom: 25px;
-    }
-
-    .panel {
-      background: #0f1b2d;
-      border: 1px solid #1e3a5f;
-      border-radius: 10px;
-      padding: 22px;
-    }
-
-    /* ALERTS */
-
-    .alert-box {
+    .alert {
       background: #0a1424;
-      border-left: 4px solid #ef4444;
-      border-radius: 6px;
       padding: 15px;
-      margin-bottom: 12px;
+      border-radius: 7px;
+      margin-bottom: 10px;
+      border-left: 4px solid #ef4444;
     }
 
-    .alert-box.warning {
+    .alert.medium {
       border-left-color: #facc15;
     }
 
-    .alert-box.medium {
-      border-left-color: #fb923c;
+    .alert strong {
+      display: block;
+      margin-bottom: 4px;
     }
 
-    .alert-title {
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-    .alert-text {
+    .alert span {
       color: #94a3b8;
       font-size: 13px;
-      line-height: 1.5;
     }
 
-    .severity {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: bold;
+    /* ================= CONTACT ================= */
+
+    .contact {
+      text-align: center;
     }
 
-    .high {
-      background: #3f1111;
-      color: #ef4444;
-    }
-
-    .medium-label {
-      background: #3a210c;
-      color: #fb923c;
-    }
-
-    .low {
-      background: #3a320b;
-      color: #facc15;
-    }
-
-    /* BUTTON */
-
-    .scan-button {
-      width: 100%;
-      padding: 12px;
-      background: #0369a1;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+    .contact p {
+      color: #94a3b8;
       margin-bottom: 15px;
     }
 
-    .scan-button:hover {
-      background: #0284c7;
-    }
-
-    #scanResult {
-      color: #22c55e;
-      font-size: 13px;
-      text-align: center;
-      min-height: 18px;
-    }
-
-    /* EVENTS TABLE */
-
-    .events-panel {
-      background: #0f1b2d;
-      border: 1px solid #1e3a5f;
-      border-radius: 10px;
-      padding: 22px;
-      margin-bottom: 25px;
-      overflow-x: auto;
-    }
-
-    .events-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .events-table th {
-      text-align: left;
-      color: #38bdf8;
-      font-size: 12px;
-      padding: 13px;
-      border-bottom: 1px solid #334155;
-      text-transform: uppercase;
-    }
-
-    .events-table td {
-      padding: 14px 13px;
-      color: #cbd5e1;
-      font-size: 13px;
-      border-bottom: 1px solid #1e293b;
-    }
-
-    .events-table tr:hover {
-      background: #111f33;
-    }
-
-    /* SYSTEM STATUS */
-
-    .system-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .system {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #0a1424;
-      padding: 14px;
-      border-radius: 6px;
-    }
-
-    .system-name {
-      color: #cbd5e1;
-      font-size: 14px;
-    }
-
-    .system-status {
-      color: #22c55e;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    /* HEALTH */
-
-    .health-item {
-      margin-bottom: 18px;
-    }
-
-    .health-label {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 7px;
-      color: #cbd5e1;
-      font-size: 13px;
-    }
-
-    .health-bar {
-      width: 100%;
-      height: 8px;
-      background: #1e293b;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .health-fill {
-      height: 100%;
-      background: #38bdf8;
-    }
-
-    .cpu {
-      width: 32%;
-    }
-
-    .memory {
-      width: 48%;
-    }
-
-    .disk {
-      width: 61%;
-    }
-
-    /* FOOTER */
+    /* ================= FOOTER ================= */
 
     footer {
-      border-top: 1px solid #1e293b;
       text-align: center;
-      padding: 25px 15px;
+      padding: 25px;
       color: #64748b;
+      border-top: 1px solid #1e293b;
       font-size: 13px;
     }
 
-    /* MOBILE */
+    /* ================= MOBILE ================= */
 
     @media (max-width: 800px) {
 
-      .header-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .cards {
+      .skills {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      header h1 {
+        font-size: 28px;
       }
     }
 
     @media (max-width: 500px) {
 
-      .cards {
+      .skills,
+      .dashboard-cards {
         grid-template-columns: 1fr;
       }
 
-      .navbar a {
-        padding: 8px 11px;
-        font-size: 12px;
-      }
-
-      .container {
-        padding: 20px 12px;
-      }
-
-      .events-table {
-        min-width: 650px;
+      section {
+        padding: 20px;
       }
     }
   </style>
@@ -444,382 +352,336 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- ================= PROFILE HEADER ================= -->
 
-  <header class="header">
+  <header id="home">
 
-    <div class="header-content">
+    <h1>🛡️ Cybersecurity Portfolio</h1>
 
-      <div class="brand">
-        <h1>🛡️ Colour Me SOC Dashboard</h1>
-        <p>Security Operations Center | Threat Monitoring & Incident Response</p>
-      </div>
+    <h2>SOC Analyst | Cybersecurity Enthusiast</h2>
 
-      <div class="live-status">
-        <span class="live-dot"></span>
-        SYSTEM ONLINE
-      </div>
-
-    </div>
+    <p>
+      Cybersecurity professional focused on Security Operations,
+      SIEM monitoring, threat detection, log analysis and incident response.
+    </p>
 
   </header>
 
 
-  <!-- NAVIGATION -->
+  <!-- ================= NAVIGATION ================= -->
 
-  <nav class="navbar">
+  <nav>
 
-    <div class="nav-content">
+    <div class="nav-container">
 
-      <a href="#dashboard">Dashboard</a>
-      <a href="#alerts">Alerts</a>
-      <a href="#events">Events</a>
-      <a href="#systems">Systems</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#soc">SOC Dashboard</a>
+      <a href="#contact">Contact</a>
 
     </div>
 
   </nav>
 
 
-  <main class="container" id="dashboard">
+  <main class="container">
 
 
-    <!-- DASHBOARD CARDS -->
+    <!-- ================= ABOUT ME ================= -->
 
-    <section class="cards">
-      <div class="card">
-        <div class="card-title">Security Alerts</div>
-        <div class="card-value red" id="alertCount">3</div>
-      </div>
+    <section id="about">
 
-      <div class="card">
-        <div class="card-title">Systems Online</div>
-        <div class="card-value green">12</div>
-      </div>
+      <h2 class="section-title">👨‍💻 About Me</h2>
 
-      <div class="card">
-        <div class="card-title">Warnings</div>
-        <div class="card-value yellow">2</div>
-      </div>
+      <p class="about-text">
+        I am a cybersecurity enthusiast focused on developing practical
+        skills in Security Operations Center (SOC) activities.
+        My learning areas include SIEM, Splunk, Windows security,
+        Linux, networking, log analysis, threat detection and
+        incident response.
+      </p>
 
-      <div class="card">
-        <div class="card-title">Monitoring</div>
-        <div class="card-value green">ACTIVE</div>
+      <br>
+
+      <p class="about-text">
+        I enjoy working with security events, investigating suspicious
+        activity and building practical cybersecurity projects to
+        strengthen my SOC Analyst skills.
+      </p>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+      <h2 class="section-title">🛠️ Technical Skills</h2>
+
+      <div class="skills">
+
+        <div class="skill">SIEM</div>
+        <div class="skill">Splunk</div>
+        <div class="skill">Log Analysis</div>
+        <div class="skill">Threat Detection</div>
+        <div class="skill">Incident Response</div>
+        <div class="skill">Windows Security</div>
+        <div class="skill">Linux</div>
+        <div class="skill">Networking</div>
+        <div class="skill">TCP/IP</div>
+        <div class="skill">Sysmon</div>
+        <div class="skill">Security Monitoring</div>
+        <div class="skill">TryHackMe</div>
+
       </div>
 
     </section>
 
 
-    <!-- THREAT LEVEL -->
+    <!-- ================= PROJECTS ================= -->
 
-    <section class="threat-panel">
+    <section id="projects">
 
-      <div class="threat-header">
+      <h2 class="section-title">📂 Cybersecurity Projects</h2>
 
-        <h2 class="section-title" style="margin-bottom:0;">
-          🎯 Current Threat Level
-        </h2>
 
-        <span class="threat-level">
-          MEDIUM
+      <div class="project">
+
+        <h3>🛡️ Colour Me SOC Security Dashboard</h3>
+
+        <p>
+          A professional SOC monitoring dashboard designed to
+          demonstrate security alerts, threat levels, system status,
+          security events and system health monitoring.
+        </p>
+
+        <div class="tech">
+          Technologies: HTML | CSS | JavaScript
+        </div>
+
+        <div class="project-links">
+
+          <!-- अपनी GitHub repository का link यहाँ डालना -->
+          <a href="#" class="button">
+            GitHub Project
+          </a>
+
+          <!-- अपने live portfolio/dashboard का link यहाँ डालना -->
+          <a href="#" class="button">
+            Live Demo
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <h3>🔐 Cybersecurity SOC Internship Project</h3>
+
+        <p>
+          Practical cybersecurity project focused on SOC operations,
+          security monitoring, alert analysis, log investigation and
+          threat detection concepts.
+        </p>
+
+        <div class="tech">
+          Focus: SOC | SIEM | Security Monitoring | Threat Detection
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <h3>🔎 TryHackMe Security Labs</h3>
+
+        <p>
+          Hands-on cybersecurity labs covering SIEM, Splunk,
+          Windows fundamentals, networking and security monitoring.
+        </p>
+
+        <div class="tech">
+          Platform: TryHackMe
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience">
+
+      <h2 class="section-title">💼 Experience</h2>
+
+
+      <div class="experience">
+
+        <h3>Cybersecurity Internship</h3>
+
+        <div class="date">
+          September – November
+        </div>
+
+        <p>
+          Working on practical cybersecurity and SOC-related
+          activities including security monitoring, threat detection,
+          log analysis and security tools.
+        </p>
+
+      </div>
+
+
+      <div class="experience">
+
+        <h3>Cybersecurity Intern – Tecbenz</h3>
+
+        <div class="date">
+          Internship
+        </div>
+
+        <p>
+          Developing practical cybersecurity knowledge and working
+          on security-related tasks and projects.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CERTIFICATIONS ================= -->
+
+    <section id="certifications">
+
+      <h2 class="section-title">🏆 Certifications & Training</h2>
+
+      <div class="certifications">
+
+        <div class="cert">
+          <strong>TryHackMe – Cybersecurity Training</strong>
+          <span>Hands-on cybersecurity labs and security challenges</span>
+        </div>
+
+        <div class="cert">
+          <strong>SIEM & Splunk Training</strong>
+          <span>Security monitoring, log analysis and SPL concepts</span>
+        </div>
+
+        <div class="cert">
+          <strong>Windows Security Fundamentals</strong>
+          <span>Windows security and system monitoring concepts</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SOC DASHBOARD ================= -->
+
+    <section id="soc">
+
+      <h2 class="section-title">🚨 SOC Security Dashboard</h2>
+
+
+      <div class="dashboard-cards">
+
+        <div class="dashboard-card">
+          <small>Security Alerts</small>
+          <strong class="red" id="alertCount">3</strong>
+        </div>
+        <div class="dashboard-card">
+          <small>Systems Online</small>
+          <strong class="green">12</strong>
+        </div>
+
+        <div class="dashboard-card">
+          <small>Warnings</small>
+          <strong class="yellow">2</strong>
+        </div>
+
+        <div class="dashboard-card">
+          <small>Monitoring</small>
+          <strong class="green">ACTIVE</strong>
+        </div>
+
+      </div>
+
+
+      <div class="alert">
+
+        <strong>🔴 High Severity Alert</strong>
+
+        <span>
+          Multiple failed login attempts detected.
         </span>
 
       </div>
 
-      <div class="progress">
-        <div class="progress-bar"></div>
-      </div>
 
-    </section>
+      <div class="alert medium">
 
+        <strong>🟡 Suspicious Activity</strong>
 
-    <!-- ALERTS + SECURITY TOOLS -->
-
-    <section class="grid" id="alerts">
-
-
-      <!-- SECURITY ALERTS -->
-
-      <div class="panel">
-
-        <h2 class="section-title">
-          🚨 Security Alerts
-        </h2>
-
-        <div class="alert-box">
-
-          <div class="alert-title">
-            High Severity Alert
-          </div>
-
-          <div class="alert-text">
-            Multiple failed login attempts detected.
-          </div>
-
-          <span class="severity high">
-            HIGH
-          </span>
-
-        </div>
-
-
-        <div class="alert-box medium">
-
-          <div class="alert-title">
-            Suspicious Activity
-          </div>
-
-          <div class="alert-text">
-            Unusual network activity detected.
-          </div>
-
-          <span class="severity medium-label">
-            MEDIUM
-          </span>
-
-        </div>
-
-
-        <div class="alert-box warning">
-
-          <div class="alert-title">
-            System Warning
-          </div>
-
-          <div class="alert-text">
-            Security update is recommended.
-          </div>
-
-          <span class="severity low">
-            LOW
-          </span>
-
-        </div>
+        <span>
+          Unusual network activity detected.
+        </span>
 
       </div>
 
 
-      <!-- SECURITY SCAN -->
+      <div class="alert medium">
 
-      <div class="panel">
+        <strong>🟡 System Warning</strong>
 
-        <h2 class="section-title">
-          🔍 Security Scanner
-        </h2>
-
-        <p class="alert-text" style="margin-bottom:18px;">
-          Run a simulated security scan to check the current environment.
-        </p>
-
-        <button class="scan-button" onclick="runScan()">
-          🔎 RUN SECURITY SCAN
-        </button>
-
-        <div id="scanResult"></div>
-
-        <br>
-
-        <div class="system">
-          <span class="system-name">Firewall</span>
-          <span class="system-status">PROTECTED</span>
-        </div>
-
-        <br>
-
-        <div class="system">
-          <span class="system-name">SIEM</span>
-          <span class="system-status">MONITORING</span>
-        </div>
+        <span>
+          Security update is recommended.
+        </span>
 
       </div>
 
     </section>
 
 
-    <!-- RECENT SECURITY EVENTS -->
+    <!-- ================= CONTACT ================= -->
 
-    <section class="events-panel" id="events">
+    <section id="contact" class="contact">
 
-      <h2 class="section-title">
-        📋 Recent Security Events
-      </h2>
+      <h2 class="section-title">📞 Contact</h2>
 
-      <table class="events-table">
-
-        <thead>
-
-          <tr>
-            <th>Time</th>
-            <th>Event</th>
-            <th>Severity</th>
-            <th>Status</th>
-          </tr>
-
-        </thead>
-
-        <tbody>
-
-          <tr>
-            <td>12:30 PM</td>
-            <td>Multiple Failed Logins</td>
-            <td class="red">HIGH</td>
-            <td>Investigating</td>
-          </tr>
-
-          <tr>
-            <td>12:15 PM</td>
-            <td>Unusual Network Activity</td>
-            <td class="yellow">MEDIUM</td>
-            <td>Monitoring</td>
-          </tr>
-
-          <tr>
-            <td>11:50 AM</td>
-            <td>System Update Required</td>
-            <td class="yellow">LOW</td>
-            <td>Pending</td>
-          </tr>
-
-          <tr>
-            <td>11:30 AM</td>
-            <td>Firewall Rule Updated</td>
-            <td class="green">INFO</td>
-            <td>Completed</td>
-          </tr>
-
-        </tbody>
-
-      </table>
-      </section>
+      <p>
+        Interested in cybersecurity opportunities or collaboration?
+        Feel free to connect with me.
+      </p>
 
 
-    <!-- SYSTEMS + HEALTH -->
+      <!-- अपना actual email यहाँ डालना -->
 
-    <section class="grid" id="systems">
-
-
-      <!-- SYSTEM STATUS -->
-
-      <div class="panel">
-
-        <h2 class="section-title">
-          💻 System Status
-        </h2>
-
-        <div class="system-list">
-
-          <div class="system">
-            <span class="system-name">
-              Web Server
-            </span>
-
-            <span class="system-status">
-              🟢 ONLINE
-            </span>
-          </div>
+      <a href="mailto:YOUR-EMAIL@example.com" class="button">
+        📧 Email
+      </a>
 
 
-          <div class="system">
-            <span class="system-name">
-              Database Server
-            </span>
+      <!-- अपना LinkedIn link यहाँ डालना -->
 
-            <span class="system-status">
-              🟢 ONLINE
-            </span>
-          </div>
+      <a href="#" class="button">
+        LinkedIn
+      </a>
 
 
-          <div class="system">
-            <span class="system-name">
-              SIEM Monitoring
-            </span>
+      <!-- अपना GitHub link यहाँ डालना -->
 
-            <span class="system-status">
-              🟢 ACTIVE
-            </span>
-          </div>
-
-
-          <div class="system">
-            <span class="system-name">
-              Firewall
-            </span>
-
-            <span class="system-status">
-              🟢 PROTECTED
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- SYSTEM HEALTH -->
-
-      <div class="panel">
-
-        <h2 class="section-title">
-          📊 System Health
-        </h2>
-
-
-        <div class="health-item">
-
-          <div class="health-label">
-            <span>CPU Usage</span>
-            <strong>32%</strong>
-          </div>
-
-          <div class="health-bar">
-            <div class="health-fill cpu"></div>
-          </div>
-
-        </div>
-
-
-        <div class="health-item">
-
-          <div class="health-label">
-            <span>Memory Usage</span>
-            <strong>48%</strong>
-          </div>
-
-          <div class="health-bar">
-            <div class="health-fill memory"></div>
-          </div>
-
-        </div>
-
-
-        <div class="health-item">
-
-          <div class="health-label">
-            <span>Disk Usage</span>
-            <strong>61%</strong>
-          </div>
-
-          <div class="health-bar">
-            <div class="health-fill disk"></div>
-          </div>
-
-        </div>
-
-
-        <div class="system">
-
-          <span class="system-name">
-            Network Status
-          </span>
-
-          <span class="system-status">
-            🟢 SECURE
-          </span>
-
-        </div>
-
-      </div>
+      <a href="#" class="button">
+        GitHub
+      </a>
 
     </section>
 
@@ -827,37 +689,34 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
 
   <footer>
 
-    <p>
-      © 2026 Colour Me | Cybersecurity SOC Project
-    </p>
-
-    <p style="margin-top:7px;">
-      SOC Monitoring Dashboard | Security Analysis & Threat Detection
-    </p>
+    © 2026 Cybersecurity Portfolio | SOC Analyst
 
   </footer>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- ================= JAVASCRIPT ================= -->
 
   <script>
 
-    let alertCount = 3;
+    let alerts = 3;
 
-    function runScan() {
+    /*
+      Simulated SOC alert counter.
+      This is a portfolio demonstration,
+      not a real security monitoring system.
+    */
 
-      alertCount++;
+    setInterval(function () {
 
-      document.getElementById("alertCount").innerText = alertCount;
+      alerts++;
 
-      document.getElementById("scanResult").innerText =
-        "✓ Security scan completed — New security event detected.";
+      document.getElementById("alertCount").innerText = alerts;
 
-    }
+    }, 15000);
 
   </script>
 
