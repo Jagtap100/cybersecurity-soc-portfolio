@@ -132,7 +132,16 @@
       <div class="card">
         <h3>Security Alerts</h3>
         <div class="number alert"id="alertCount">3</div>
-      </div>
+      let alertCount = 3;
+
+function showAlert() {
+  alertCount++;
+
+  document.getElementById("alertCount").innerHTML = alertCount;
+
+  document.getElementById("newAlert").innerHTML =
+    "⚠️ Security scan completed: New security event detected.";
+}
 
       <div class="card">
         <h3>Systems Online</h3>
