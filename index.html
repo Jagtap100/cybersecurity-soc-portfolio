@@ -154,7 +154,11 @@
     <div class="panel">
 
       <h2>🚨 Security Alerts</h2>
+<button onclick="showAlert()" class="alert-button">
+  🚨 Check Security Alert
+</button>
 
+<p id="newAlert"></p>
       <div class="alert-box">
         <strong>High Severity Alert</strong>
         Multiple failed login attempts detected.
@@ -193,6 +197,10 @@
   </footer>
 
   <script>
+    function showAlert() {
+  document.getElementById("newAlert").innerHTML =
+    "⚠️ Security scan completed: No new critical threats detected.";
+}
     function updateClock() {
       const now = new Date();
 
