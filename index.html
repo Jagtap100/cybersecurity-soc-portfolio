@@ -4,180 +4,439 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Colour Me - SOC Dashboard</title>
+  <title>Colour Me | SOC Security Dashboard</title>
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #0f172a;
-      color: white;
+      background: #080f1d;
+      color: #e2e8f0;
+      min-height: 100vh;
     }
+
+    /* HEADER */
 
     .header {
-      background: #020617;
-      padding: 25px;
-      text-align: center;
-      border-bottom: 1px solid #334155;
+      background: #0b1324;
+      border-bottom: 1px solid #1e3a5f;
+      padding: 24px 20px;
     }
 
-    .header h1 {
+    .header-content {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand h1 {
       color: #38bdf8;
-      margin-bottom: 10px;
+      font-size: 26px;
+      margin-bottom: 6px;
     }
 
-    .header p {
-      color: #94a3b8;
-    }
-
-    .clock {
+    .brand p {
       color: #94a3b8;
       font-size: 14px;
-      margin-top: 10px;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 25px;
+    .live-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #22c55e;
+      font-weight: bold;
+      font-size: 14px;
     }
+
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #22c55e;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      background: #0b1324;
+      border-bottom: 1px solid #1e293b;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      background: #172554;
+      color: #38bdf8;
+    }
+
+    /* MAIN */
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    /* TOP CARDS */
 
     .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 18px;
       margin-bottom: 25px;
     }
 
     .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid #334155;
-      text-align: center;
+      background: #0f1b2d;
+      border: 1px solid #1e3a5f;
+      border-radius: 10px;
+      padding: 22px;
     }
 
-    .card h3 {
+    .card-title {
       color: #94a3b8;
-      margin-bottom: 15px;
-      font-size: 16px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
     }
 
-    .number {
-      font-size: 30px;
+    .card-value {
+      font-size: 28px;
       font-weight: bold;
+    }
+
+    .blue {
       color: #38bdf8;
     }
 
-    .online {
+    .green {
       color: #22c55e;
     }
 
-    .warning {
+    .yellow {
       color: #facc15;
     }
 
-    .danger {
+    .red {
       color: #ef4444;
     }
 
-    .panel {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid #334155;
+    /* THREAT LEVEL */
+
+    .threat-panel {
+      background: #0f1b2d;
+      border: 1px solid #1e3a5f;
+      border-radius: 10px;
+      padding: 22px;
       margin-bottom: 25px;
     }
 
-    .panel h2 {
+    .section-title {
       color: #38bdf8;
-      margin-bottom: 20px;
+      font-size: 19px;
+      margin-bottom: 18px;
     }
+
+    .threat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .threat-level {
+      color: #facc15;
+      font-weight: bold;
+    }
+
+    .progress {
+      width: 100%;
+      height: 10px;
+      background: #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 58%;
+      height: 100%;
+      background: #facc15;
+    }
+
+    /* TWO COLUMN */
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .panel {
+      background: #0f1b2d;
+      border: 1px solid #1e3a5f;
+      border-radius: 10px;
+      padding: 22px;
+    }
+
+    /* ALERTS */
 
     .alert-box {
-      background: #0f172a;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 12px;
+      background: #0a1424;
       border-left: 4px solid #ef4444;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 12px;
     }
 
-    .alert-box strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .warning-box {
+    .alert-box.warning {
       border-left-color: #facc15;
     }
 
-    .button {
-      background: #ef4444;
-      color: white;
+    .alert-box.medium {
+      border-left-color: #fb923c;
+    }
+
+    .alert-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .alert-text {
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .severity {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .high {
+      background: #3f1111;
+      color: #ef4444;
+    }
+
+    .medium-label {
+      background: #3a210c;
+      color: #fb923c;
+    }
+
+    .low {
+      background: #3a320b;
+      color: #facc15;
+    }
+
+    /* BUTTON */
+
+    .scan-button {
+      width: 100%;
+      padding: 12px;
+      background: #0369a1;
       border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
       margin-bottom: 15px;
-      font-size: 15px;
     }
 
-    .button:hover {
-      background: #dc2626;
+    .scan-button:hover {
+      background: #0284c7;
     }
 
-    #message {
+    #scanResult {
       color: #22c55e;
-      font-weight: bold;
-      margin-bottom: 15px;
+      font-size: 13px;
+      text-align: center;
+      min-height: 18px;
     }
 
-    .event {
-      background: #0f172a;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      border-left: 4px solid #38bdf8;
+    /* EVENTS TABLE */
+
+    .events-panel {
+      background: #0f1b2d;
+      border: 1px solid #1e3a5f;
+      border-radius: 10px;
+      padding: 22px;
+      margin-bottom: 25px;
+      overflow-x: auto;
     }
 
-    .event strong {
+    .events-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .events-table th {
+      text-align: left;
       color: #38bdf8;
+      font-size: 12px;
+      padding: 13px;
+      border-bottom: 1px solid #334155;
+      text-transform: uppercase;
+    }
+
+    .events-table td {
+      padding: 14px 13px;
+      color: #cbd5e1;
+      font-size: 13px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .events-table tr:hover {
+      background: #111f33;
+    }
+
+    /* SYSTEM STATUS */
+
+    .system-list {
+      display: grid;
+      gap: 12px;
     }
 
     .system {
       display: flex;
       justify-content: space-between;
-      background: #0f172a;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 8px;
+      align-items: center;
+      background: #0a1424;
+      padding: 14px;
+      border-radius: 6px;
     }
 
-    .status {
+    .system-name {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .system-status {
       color: #22c55e;
+      font-size: 13px;
       font-weight: bold;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #64748b;
+    /* HEALTH */
+
+    .health-item {
+      margin-bottom: 18px;
     }
 
-    @media (max-width: 700px) {
+    .health-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 7px;
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .health-bar {
+      width: 100%;
+      height: 8px;
+      background: #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .health-fill {
+      height: 100%;
+      background: #38bdf8;
+    }
+
+    .cpu {
+      width: 32%;
+    }
+
+    .memory {
+      width: 48%;
+    }
+
+    .disk {
+      width: 61%;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      padding: 25px 15px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
       .cards {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
+
       .cards {
         grid-template-columns: 1fr;
+      }
+
+      .navbar a {
+        padding: 8px 11px;
+        font-size: 12px;
+      }
+
+      .container {
+        padding: 20px 12px;
+      }
+
+      .events-table {
+        min-width: 650px;
       }
     }
   </style>
@@ -185,169 +444,420 @@
 
 <body>
 
-  <div class="header">
+  <!-- HEADER -->
 
-    <h1>🛡️ Colour Me SOC Dashboard</h1>
+  <header class="header">
 
-    <p>Security Operations Center Monitoring</p>
+    <div class="header-content">
 
-    <div class="clock" id="clock"></div>
-
-  </div>
-
-
-  <div class="container">
-
-    <!-- Dashboard Cards -->
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>Security Alerts</h3>
-        <div class="number danger" id="alertCount">3</div>
+      <div class="brand">
+        <h1>🛡️ Colour Me SOC Dashboard</h1>
+        <p>Security Operations Center | Threat Monitoring & Incident Response</p>
       </div>
 
-      <div class="card">
-        <h3>Systems Online</h3>
-        <div class="number online">12</div>
-      </div>
-
-      <div class="card">
-        <h3>Warnings</h3>
-        <div class="number warning">2</div>
-      </div>
-
-      <div class="card">
-        <h3>Monitoring</h3>
-        <div class="number online">ACTIVE</div>
+      <div class="live-status">
+        <span class="live-dot"></span>
+        SYSTEM ONLINE
       </div>
 
     </div>
 
+  </header>
 
-    <!-- Security Alerts -->
 
-    <div class="panel">
+  <!-- NAVIGATION -->
 
-      <h2>🚨 Security Alerts</h2>
+  <nav class="navbar">
 
-      <button class="button" onclick="checkAlert()">
-        🚨 Check Security Alert
-      </button>
+    <div class="nav-content">
 
-      <div id="message"></div>
-      <div class="alert-box">
-        <strong>High Severity Alert</strong>
-        Multiple failed login attempts detected.
-      </div>
-
-      <div class="alert-box">
-        <strong>Suspicious Activity</strong>
-        Unusual network activity detected.
-      </div>
-
-      <div class="alert-box warning-box">
-        <strong>Warning</strong>
-        System update is recommended.
-      </div>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#alerts">Alerts</a>
+      <a href="#events">Events</a>
+      <a href="#systems">Systems</a>
 
     </div>
 
+  </nav>
 
-    <!-- Recent Security Events -->
 
-    <div class="panel">
+  <main class="container" id="dashboard">
 
-      <h2>📋 Recent Security Events</h2>
 
-      <div class="event">
-        <strong>12:30 PM</strong><br>
-        Multiple Failed Logins<br>
-        <span class="danger">Severity: High</span> |
-        Status: Investigating
+    <!-- DASHBOARD CARDS -->
+
+    <section class="cards">
+      <div class="card">
+        <div class="card-title">Security Alerts</div>
+        <div class="card-value red" id="alertCount">3</div>
       </div>
 
-      <div class="event">
-        <strong>12:15 PM</strong><br>
-        Unusual Network Activity<br>
-        <span class="warning">Severity: Medium</span> |
-        Status: Monitoring
+      <div class="card">
+        <div class="card-title">Systems Online</div>
+        <div class="card-value green">12</div>
       </div>
 
-      <div class="event">
-        <strong>11:50 AM</strong><br>
-        System Update Required<br>
-        <span class="warning">Severity: Low</span> |
-        Status: Pending
+      <div class="card">
+        <div class="card-title">Warnings</div>
+        <div class="card-value yellow">2</div>
       </div>
 
-    </div>
-
-
-    <!-- System Status -->
-
-    <div class="panel">
-
-      <h2>💻 System Status</h2>
-
-      <div class="system">
-        <span>Web Server</span>
-        <span class="status">🟢 Online</span>
+      <div class="card">
+        <div class="card-title">Monitoring</div>
+        <div class="card-value green">ACTIVE</div>
       </div>
 
-      <div class="system">
-        <span>Database Server</span>
-        <span class="status">🟢 Online</span>
+    </section>
+
+
+    <!-- THREAT LEVEL -->
+
+    <section class="threat-panel">
+
+      <div class="threat-header">
+
+        <h2 class="section-title" style="margin-bottom:0;">
+          🎯 Current Threat Level
+        </h2>
+
+        <span class="threat-level">
+          MEDIUM
+        </span>
+
       </div>
 
-      <div class="system">
-        <span>SIEM Monitoring</span>
-        <span class="status">🟢 Active</span>
+      <div class="progress">
+        <div class="progress-bar"></div>
       </div>
 
-      <div class="system">
-        <span>Firewall</span>
-        <span class="status">🟢 Protected</span>
+    </section>
+
+
+    <!-- ALERTS + SECURITY TOOLS -->
+
+    <section class="grid" id="alerts">
+
+
+      <!-- SECURITY ALERTS -->
+
+      <div class="panel">
+
+        <h2 class="section-title">
+          🚨 Security Alerts
+        </h2>
+
+        <div class="alert-box">
+
+          <div class="alert-title">
+            High Severity Alert
+          </div>
+
+          <div class="alert-text">
+            Multiple failed login attempts detected.
+          </div>
+
+          <span class="severity high">
+            HIGH
+          </span>
+
+        </div>
+
+
+        <div class="alert-box medium">
+
+          <div class="alert-title">
+            Suspicious Activity
+          </div>
+
+          <div class="alert-text">
+            Unusual network activity detected.
+          </div>
+
+          <span class="severity medium-label">
+            MEDIUM
+          </span>
+
+        </div>
+
+
+        <div class="alert-box warning">
+
+          <div class="alert-title">
+            System Warning
+          </div>
+
+          <div class="alert-text">
+            Security update is recommended.
+          </div>
+
+          <span class="severity low">
+            LOW
+          </span>
+
+        </div>
+
       </div>
 
-    </div>
 
-  </div>
+      <!-- SECURITY SCAN -->
 
+      <div class="panel">
+
+        <h2 class="section-title">
+          🔍 Security Scanner
+        </h2>
+
+        <p class="alert-text" style="margin-bottom:18px;">
+          Run a simulated security scan to check the current environment.
+        </p>
+
+        <button class="scan-button" onclick="runScan()">
+          🔎 RUN SECURITY SCAN
+        </button>
+
+        <div id="scanResult"></div>
+
+        <br>
+
+        <div class="system">
+          <span class="system-name">Firewall</span>
+          <span class="system-status">PROTECTED</span>
+        </div>
+
+        <br>
+
+        <div class="system">
+          <span class="system-name">SIEM</span>
+          <span class="system-status">MONITORING</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RECENT SECURITY EVENTS -->
+
+    <section class="events-panel" id="events">
+
+      <h2 class="section-title">
+        📋 Recent Security Events
+      </h2>
+
+      <table class="events-table">
+
+        <thead>
+
+          <tr>
+            <th>Time</th>
+            <th>Event</th>
+            <th>Severity</th>
+            <th>Status</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>12:30 PM</td>
+            <td>Multiple Failed Logins</td>
+            <td class="red">HIGH</td>
+            <td>Investigating</td>
+          </tr>
+
+          <tr>
+            <td>12:15 PM</td>
+            <td>Unusual Network Activity</td>
+            <td class="yellow">MEDIUM</td>
+            <td>Monitoring</td>
+          </tr>
+
+          <tr>
+            <td>11:50 AM</td>
+            <td>System Update Required</td>
+            <td class="yellow">LOW</td>
+            <td>Pending</td>
+          </tr>
+
+          <tr>
+            <td>11:30 AM</td>
+            <td>Firewall Rule Updated</td>
+            <td class="green">INFO</td>
+            <td>Completed</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+      </section>
+
+
+    <!-- SYSTEMS + HEALTH -->
+
+    <section class="grid" id="systems">
+
+
+      <!-- SYSTEM STATUS -->
+
+      <div class="panel">
+
+        <h2 class="section-title">
+          💻 System Status
+        </h2>
+
+        <div class="system-list">
+
+          <div class="system">
+            <span class="system-name">
+              Web Server
+            </span>
+
+            <span class="system-status">
+              🟢 ONLINE
+            </span>
+          </div>
+
+
+          <div class="system">
+            <span class="system-name">
+              Database Server
+            </span>
+
+            <span class="system-status">
+              🟢 ONLINE
+            </span>
+          </div>
+
+
+          <div class="system">
+            <span class="system-name">
+              SIEM Monitoring
+            </span>
+
+            <span class="system-status">
+              🟢 ACTIVE
+            </span>
+          </div>
+
+
+          <div class="system">
+            <span class="system-name">
+              Firewall
+            </span>
+
+            <span class="system-status">
+              🟢 PROTECTED
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SYSTEM HEALTH -->
+
+      <div class="panel">
+
+        <h2 class="section-title">
+          📊 System Health
+        </h2>
+
+
+        <div class="health-item">
+
+          <div class="health-label">
+            <span>CPU Usage</span>
+            <strong>32%</strong>
+          </div>
+
+          <div class="health-bar">
+            <div class="health-fill cpu"></div>
+          </div>
+
+        </div>
+
+
+        <div class="health-item">
+
+          <div class="health-label">
+            <span>Memory Usage</span>
+            <strong>48%</strong>
+          </div>
+
+          <div class="health-bar">
+            <div class="health-fill memory"></div>
+          </div>
+
+        </div>
+
+
+        <div class="health-item">
+
+          <div class="health-label">
+            <span>Disk Usage</span>
+            <strong>61%</strong>
+          </div>
+
+          <div class="health-bar">
+            <div class="health-fill disk"></div>
+          </div>
+
+        </div>
+
+
+        <div class="system">
+
+          <span class="system-name">
+            Network Status
+          </span>
+
+          <span class="system-status">
+            🟢 SECURE
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
 
   <footer>
-    © 2026 Colour Me | Cybersecurity SOC Project
+
+    <p>
+      © 2026 Colour Me | Cybersecurity SOC Project
+    </p>
+
+    <p style="margin-top:7px;">
+      SOC Monitoring Dashboard | Security Analysis & Threat Detection
+    </p>
+
   </footer>
 
 
+  <!-- JAVASCRIPT -->
+
   <script>
 
-    let alerts = 3;
+    let alertCount = 3;
 
-    function checkAlert() {
+    function runScan() {
 
-      alerts++;
+      alertCount++;
 
-      document.getElementById("alertCount").innerText = alerts;
+      document.getElementById("alertCount").innerText = alertCount;
 
-      document.getElementById("message").innerText =
-        "⚠️ Security scan completed: New security event detected.";
-
-    }
-
-
-    function updateClock() {
-
-      const now = new Date();
-
-      document.getElementById("clock").innerText =
-        "Current Time: " + now.toLocaleString();
+      document.getElementById("scanResult").innerText =
+        "✓ Security scan completed — New security event detected.";
 
     }
-
-    updateClock();
-
-    setInterval(updateClock, 1000);
 
   </script>
 
