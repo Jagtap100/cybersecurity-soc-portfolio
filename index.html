@@ -70,7 +70,43 @@
     .online {
       color: #22c55e;
     }
+.events-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #0f172a;
+}
 
+.events-table th,
+.events-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+}
+
+.events-table th {
+  color: #38bdf8;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.events-table td {
+  color: #cbd5e1;
+}
+
+.events-table tr:hover {
+  background: #1e293b;
+}
+
+.events-table .alert {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.events-table .warning {
+  color: #facc15;
+  font-weight: bold;
+}
     .warning {
       color: #facc15;
     }
@@ -184,7 +220,41 @@ function showAlert() {
       </div>
 
     </div>
+<div class="panel">
 
+  <h2>📋 Recent Security Events</h2>
+
+  <table class="events-table">
+    <tr>
+      <th>Time</th>
+      <th>Event</th>
+      <th>Severity</th>
+      <th>Status</th>
+    </tr>
+
+    <tr>
+      <td>12:30 PM</td>
+      <td>Multiple Failed Logins</td>
+      <td class="alert">High</td>
+      <td>Investigating</td>
+    </tr>
+
+    <tr>
+      <td>12:15 PM</td>
+      <td>Unusual Network Activity</td>
+      <td class="warning">Medium</td>
+      <td>Monitoring</td>
+    </tr>
+
+    <tr>
+      <td>11:50 AM</td>
+      <td>System Update Required</td>
+      <td class="warning">Low</td>
+      <td>Pending</td>
+    </tr>
+  </table>
+
+</div>
     <div class="panel">
 
       <h2>💻 System Status</h2>
