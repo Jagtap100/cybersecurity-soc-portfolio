@@ -70,6 +70,28 @@
     .online {
       color: #22c55e;
     }
+    .navbar {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px;
+  background: #0f172a;
+  border-bottom: 1px solid #334155;
+}
+
+.navbar a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  background: #1e293b;
+  color: #38bdf8;
+}
 .events-table {
   width: 100%;
   border-collapse: collapse;
@@ -156,6 +178,12 @@
 <body>
 
   <div class="header">
+    <nav class="navbar">
+  <a href="#dashboard">Dashboard</a>
+  <a href="#alerts">Alerts</a>
+  <a href="#events">Events</a>
+  <a href="#systems">Systems</a>
+</nav>
     <h1>🛡️ Colour Me SOC Dashboard</h1>
     <p>Security Operations Center Monitoring</p>
     <div class="clock" id="clock"></div>
