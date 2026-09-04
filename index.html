@@ -236,3 +236,120 @@
       </button>
 
       <div id="message"></div>
+      <div class="alert-box">
+        <strong>High Severity Alert</strong>
+        Multiple failed login attempts detected.
+      </div>
+
+      <div class="alert-box">
+        <strong>Suspicious Activity</strong>
+        Unusual network activity detected.
+      </div>
+
+      <div class="alert-box warning-box">
+        <strong>Warning</strong>
+        System update is recommended.
+      </div>
+
+    </div>
+
+
+    <!-- Recent Security Events -->
+
+    <div class="panel">
+
+      <h2>📋 Recent Security Events</h2>
+
+      <div class="event">
+        <strong>12:30 PM</strong><br>
+        Multiple Failed Logins<br>
+        <span class="danger">Severity: High</span> |
+        Status: Investigating
+      </div>
+
+      <div class="event">
+        <strong>12:15 PM</strong><br>
+        Unusual Network Activity<br>
+        <span class="warning">Severity: Medium</span> |
+        Status: Monitoring
+      </div>
+
+      <div class="event">
+        <strong>11:50 AM</strong><br>
+        System Update Required<br>
+        <span class="warning">Severity: Low</span> |
+        Status: Pending
+      </div>
+
+    </div>
+
+
+    <!-- System Status -->
+
+    <div class="panel">
+
+      <h2>💻 System Status</h2>
+
+      <div class="system">
+        <span>Web Server</span>
+        <span class="status">🟢 Online</span>
+      </div>
+
+      <div class="system">
+        <span>Database Server</span>
+        <span class="status">🟢 Online</span>
+      </div>
+
+      <div class="system">
+        <span>SIEM Monitoring</span>
+        <span class="status">🟢 Active</span>
+      </div>
+
+      <div class="system">
+        <span>Firewall</span>
+        <span class="status">🟢 Protected</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <footer>
+    © 2026 Colour Me | Cybersecurity SOC Project
+  </footer>
+
+
+  <script>
+
+    let alerts = 3;
+
+    function checkAlert() {
+
+      alerts++;
+
+      document.getElementById("alertCount").innerText = alerts;
+
+      document.getElementById("message").innerText =
+        "⚠️ Security scan completed: New security event detected.";
+
+    }
+
+
+    function updateClock() {
+
+      const now = new Date();
+
+      document.getElementById("clock").innerText =
+        "Current Time: " + now.toLocaleString();
+
+    }
+
+    updateClock();
+
+    setInterval(updateClock, 1000);
+
+  </script>
+
+</body>
+</html>
