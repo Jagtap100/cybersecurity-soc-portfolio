@@ -131,7 +131,7 @@
 
       <div class="card">
         <h3>Security Alerts</h3>
-        <div class="number alert">3</div>
+        <div class="number alert"id="alertCount">3</div>
       </div>
 
       <div class="card">
@@ -197,9 +197,15 @@
   </footer>
 
   <script>
-    function showAlert() {
+  let alertCount = 3;
+
+function showAlert() {
+  alertCount++;
+
+  document.getElementById("alertCount").innerHTML = alertCount;
+
   document.getElementById("newAlert").innerHTML =
-    "⚠️ Security scan completed: No new critical threats detected.";
+    "⚠️ Security scan completed: New security event detected.";
 }
     function updateClock() {
       const now = new Date();
